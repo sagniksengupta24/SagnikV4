@@ -1,0 +1,45 @@
+{
+  "name": "sagnik-awwwards-portfolio",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "types": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "check:links": "node scripts/check-links.mjs",
+    "check:secrets": "node scripts/scan-secrets.mjs",
+    "check:metadata": "node scripts/check-metadata.mjs",
+    "check:hygiene": "node scripts/check-hygiene.mjs",
+    "check": "npm run types && npm run lint && npm run check:links && npm run check:secrets && npm run check:metadata && npm run check:hygiene && npm run build",
+    "validate": "npm run check",
+    "test:browser": "playwright test"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "framer-motion": "^12.23.24",
+    "gsap": "^3.13.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.185.1",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.0",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.19"
+    }
+  }
+}

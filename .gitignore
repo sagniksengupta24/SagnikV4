@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+test-results
+playwright-report
+coverage
+*.tsbuildinfo
+*.log
+*.zip
+.DS_Store
+__MACOSX
+

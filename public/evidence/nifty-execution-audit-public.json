@@ -1,0 +1,31 @@
+{
+  "artifact_id": "NIFTY-STEP5B-PUBLIC-EXTRACT",
+  "published": "2026-07-14",
+  "owner": "Sagnik Sengupta",
+  "project_status": "research_only",
+  "source": "owner-published extract from the internal Step 5B execution audit",
+  "coverage": {
+    "universe": "NIFTY 50 constituents",
+    "successful_constituents": 50,
+    "failed_constituents": 0
+  },
+  "evaluation": {
+    "selection": "walk-forward",
+    "backtest_scope": "out-of-sample only",
+    "policy_gate": "probability >= 0.30",
+    "maximum_positions": 10
+  },
+  "execution_audit": {
+    "break_even_cost_bps_per_side": 3.98,
+    "value_is_approximate": true
+  },
+  "claim_boundary": {
+    "live_trading": false,
+    "paper_trading": false,
+    "broker_integration": false,
+    "guaranteed_returns": false,
+    "underlying_dataset_published": false,
+    "return_series_published": false
+  },
+  "note": "This public extract documents a research result supplied by the project owner. It is not independently reproducible without the private dataset and full audit output."
+}

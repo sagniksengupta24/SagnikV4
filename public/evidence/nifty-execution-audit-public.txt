@@ -1,0 +1,29 @@
+NIFTY 50 RESEARCH ENGINE — PUBLIC EXECUTION AUDIT EXTRACT
+
+Artifact ID
+NIFTY-STEP5B-PUBLIC-EXTRACT
+
+Owner
+Sagnik Sengupta
+
+Publication date
+14 July 2026
+
+Status
+Research only. No live trading, paper trading, broker integration or guaranteed return is claimed.
+
+Coverage record
+- NIFTY 50 constituent ingestion: 50 successful, 0 failed.
+- Evaluation design: walk-forward selection and out-of-sample research backtesting.
+
+Execution policy selected in the internal Step 5B audit
+- Probability gate: >= 0.30
+- Maximum concurrent positions: 10
+- Approximate break-even transaction friction: 3.98 basis points per side
+
+Evidence boundary
+This is an owner-published extract from the internal execution audit. The underlying dataset,
+return series and complete audit output are not included in the portfolio, so the result is documented
+but not independently reproducible from this public artifact alone.
+
+Historical research results do not establish future performance.
