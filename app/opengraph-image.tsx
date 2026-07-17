@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { ImageResponse } from "next/og";
 
 export const alt = "Sagnik Sengupta — AI systems that earn trust.";
