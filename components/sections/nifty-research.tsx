@@ -1,5 +1,6 @@
 import { ExternalIcon } from "@/components/ui/icons";
 import { NiftySignalStory } from "@/components/client/nifty-signal-story";
+import { resolveAsset } from "@/utils/resolve-asset";
 
 export function NiftyResearch() {
   return (
@@ -28,8 +29,8 @@ export function NiftyResearch() {
           <p>
             The result is less a prediction machine than a disciplined way to disprove weak ideas early. Every stage—from features to labels, calibration and cost sensitivity—exists to make overconfidence harder.
           </p>
-          <a href="/evidence/nifty-execution-audit-public.txt" target="_blank" rel="noreferrer">Read the public audit <ExternalIcon /></a>
-          <a href="/evidence/nifty-execution-audit-public.json" target="_blank" rel="noreferrer">Open the machine-readable record <ExternalIcon /></a>
+          <a href={resolveAsset("/evidence/nifty-execution-audit-public.txt")} target="_blank" rel="noreferrer">Read the public audit <ExternalIcon /></a>
+          <a href={resolveAsset("/evidence/nifty-execution-audit-public.json")} target="_blank" rel="noreferrer">Open the machine-readable record <ExternalIcon /></a>
         </div>
       </div>
     </article>

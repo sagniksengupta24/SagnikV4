@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 import { Suspense, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
+import { resolveAsset } from "@/utils/resolve-asset";
 
 const states = ["claim", "decompose", "test", "fail", "evidence", "ship"] as const;
 type State = (typeof states)[number];
@@ -251,7 +252,7 @@ function EnergyArchitecture({ active }: { active: boolean }) {
 }
 
 function CoreModel({ active }: { active: boolean }) {
-  const { scene } = useGLTF("/models/scroll-tech-core.glb");
+  const { scene } = useGLTF(resolveAsset("/models/scroll-tech-core.glb"));
   const model = useMemo(() => scene.clone(true), [scene]);
   const outerRef = useRef<THREE.Group>(null);
   const rootRef = useRef<THREE.Group>(null);
@@ -465,4 +466,4 @@ export default function VerificationScene({ active, onFailure }: SceneProps) {
   );
 }
 
-useGLTF.preload("/models/scroll-tech-core.glb");
+useGLTF.preload(resolveAsset("/models/scroll-tech-core.glb"));
