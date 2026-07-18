@@ -20,20 +20,25 @@ function discoverChromium() {
 
 const chromiumPath = discoverChromium();
 
+const port = 4173;
+const localURL = `http://127.0.0.1:${port}`;
+
 export default defineConfig({
   testDir: "./tests",
   timeout: 45_000,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:3000",
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || localURL,
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     launchOptions: chromiumPath ? { executablePath: chromiumPath, args: ["--no-sandbox"] } : undefined,
   },
   webServer: process.env.PLAYWRIGHT_BASE_URL ? undefined : {
-    command: "npm run start",
-    url: "http://127.0.0.1:3000",
+    // `next start` does not work with `output: "export"`.
+    // Use the locally-installed `serve` package to host the static `out` directory.
+    command: `node_modules/.bin/serve out -l ${port} --no-port-switching`,
+    url: localURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
