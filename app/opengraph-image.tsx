@@ -2,8 +2,6 @@ export const dynamic = "force-static";
 
 import { ImageResponse } from "next/og";
 
-export const dynamic = "force-static";
-
 export const alt = "Sagnik Sengupta — AI systems that earn trust.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
